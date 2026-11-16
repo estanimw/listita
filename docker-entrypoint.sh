@@ -6,4 +6,4 @@ set -eu
 mkdir -p /app/data
 chown -R nextjs:nodejs /app/data
 
-exec gosu nextjs "$@"
+exec setpriv --reuid=nextjs --regid=nodejs --init-groups "$@"

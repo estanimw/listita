@@ -19,7 +19,7 @@ ENV HOSTNAME=0.0.0.0
 ENV DB_PATH=/app/data/shopping.db
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends gosu \
+  && apt-get install -y --no-install-recommends util-linux \
   && rm -rf /var/lib/apt/lists/* \
   && groupadd --system --gid 1001 nodejs \
   && useradd --system --uid 1001 --gid nodejs nextjs \
